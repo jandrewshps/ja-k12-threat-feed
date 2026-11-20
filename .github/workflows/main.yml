@@ -1,0 +1,26 @@
+name: Clean Proxy List for FortiGate
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour automatically
+  workflow_dispatch: # Allows you to run it manually
+
+jobs:
+  update-blocklist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download and clean the list
+        run: |
+          curl -s https://raw.githubusercontent.com/yourworstnightmare1/proxy-list/main/links.txt > raw.txt
+          # Strip http/https, strip trailing paths, remove ports, and remove duplicates
+          sed 's|https\?://||' raw.txt | sed 's|/.*||' | cut -d: -f1 | sort | uniq > domains.txt
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Action Bot"
+          git config --global user.email "action@github.com"
+          git add domains.txt
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update domain list" && git push)
