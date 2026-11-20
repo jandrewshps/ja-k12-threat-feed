@@ -2,8 +2,8 @@ name: Clean Proxy List for FortiGate
 
 on:
   schedule:
-    - cron: '0 * * * *' # Runs every hour automatically
-  workflow_dispatch: # Allows you to run it manually
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
   update-blocklist:
@@ -18,16 +18,36 @@ jobs:
           : > raw.txt
 
           # 2. Download the verified K-12 proxy list 
-          # The "|| true" ensures the script won't crash if the link ever dies
           curl -fsSL https://raw.githubusercontent.com/yourworstnightmare1/proxy-list/main/links.txt >> raw.txt || true
 
-          # (Optional) You can add more raw URLs in the future by uncommenting and editing this line:
-          # curl -fsSL https://raw.githubusercontent.com/ExampleUser/ExampleRepo/main/list.txt >> raw.txt || true
+          # ==============================================================================
+          # (Optional) Add more raw URLs in the future by uncommenting and editing below:
+          # curl -fsSL https://raw.githubusercontent.com/Example/Repo/main/list.txt >> raw.txt || true
+          # curl -fsSL https://example.com/another-proxy-list.txt >> raw.txt || true
             curl -fsSL https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-porn/hosts >> raw.txt || true
             curl -fsSL https://raw.githubusercontent.com/Mafraysse/AdGuard_GameList-Filter/refs/heads/main/Domain_list_raw.txt >> raw.txt || true
-            
-          # 3. Clean the text and format it for the FortiGate
-          # This pipeline removes comments, IP prefixes, http://, trailing paths, and duplicates
+          
+          # ==============================================================================
+
+          # 3. Download and extract Toulouse Tarballs (Games and VPNs)
+          mkdir -p ut1_tmp
+          
+          curl -fsSL -o ut1_tmp/games.tar.gz https://dsi.ut-capitole.fr/blacklists/download/games.tar.gz || true
+          curl -fsSL -o ut1_tmp/vpn.tar.gz https://dsi.ut-capitole.fr/blacklists/download/vpn.tar.gz || true
+          
+          if [ -f ut1_tmp/games.tar.gz ]; then
+            tar -xzf ut1_tmp/games.tar.gz -C ut1_tmp/ games/domains
+            cat ut1_tmp/games/domains >> raw.txt
+          fi
+          
+          if [ -f ut1_tmp/vpn.tar.gz ]; then
+            tar -xzf ut1_tmp/vpn.tar.gz -C ut1_tmp/ vpn/domains
+            cat ut1_tmp/vpn/domains >> raw.txt
+          fi
+
+          rm -rf ut1_tmp
+
+          # 4. Clean the text and format it for the FortiGate
           grep -vE '^#|^$' raw.txt | \
           sed -E 's/^(0\.0\.0\.0|127\.0\.0\.1)[[:space:]]+//' | \
           sed 's|https\?://||' | \
@@ -37,7 +57,6 @@ jobs:
           grep -E '^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' | \
           sort -u > domains.txt
           
-          # Clean up the temporary file
           rm raw.txt
 
       - name: Commit and push changes
@@ -45,4 +64,4 @@ jobs:
           git config --global user.name "GitHub Action Bot"
           git config --global user.email "action@github.com"
           git add domains.txt
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update domain lists" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update domain lists with UT1" && git push)
