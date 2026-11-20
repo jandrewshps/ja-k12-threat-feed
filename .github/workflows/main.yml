@@ -24,6 +24,8 @@ jobs:
           # (Optional) You can add more raw URLs in the future by uncommenting and editing this line:
           # curl -fsSL https://raw.githubusercontent.com/ExampleUser/ExampleRepo/main/list.txt >> raw.txt || true
             curl -fsSL https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-porn/hosts >> raw.txt || true
+            curl -fsSL https://raw.githubusercontent.com/Mafraysse/AdGuard_GameList-Filter/refs/heads/main/Domain_list_raw.txt >> raw.txt || true
+            
           # 3. Clean the text and format it for the FortiGate
           # This pipeline removes comments, IP prefixes, http://, trailing paths, and duplicates
           grep -vE '^#|^$' raw.txt | \
