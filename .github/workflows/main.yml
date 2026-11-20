@@ -12,15 +12,35 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download and clean the list
+      - name: Download and clean lists
         run: |
-          curl -s https://raw.githubusercontent.com/yourworstnightmare1/proxy-list/main/links.txt > raw.txt
-          # Strip http/https, strip trailing paths, remove ports, and remove duplicates
-          sed 's|https\?://||' raw.txt | sed 's|/.*||' | cut -d: -f1 | sort | uniq > domains.txt
+          # 1. Create or clear the raw.txt file safely
+          : > raw.txt
+
+          # 2. Download the verified K-12 proxy list 
+          # The "|| true" ensures the script won't crash if the link ever dies
+          curl -fsSL https://raw.githubusercontent.com/yourworstnightmare1/proxy-list/main/links.txt >> raw.txt || true
+
+          # (Optional) You can add more raw URLs in the future by uncommenting and editing this line:
+          # curl -fsSL https://raw.githubusercontent.com/ExampleUser/ExampleRepo/main/list.txt >> raw.txt || true
+
+          # 3. Clean the text and format it for the FortiGate
+          # This pipeline removes comments, IP prefixes, http://, trailing paths, and duplicates
+          grep -vE '^#|^$' raw.txt | \
+          sed -E 's/^(0\.0\.0\.0|127\.0\.0\.1)[[:space:]]+//' | \
+          sed 's|https\?://||' | \
+          sed 's|/.*||' | \
+          cut -d: -f1 | \
+          tr -d '\r' | \
+          grep -E '^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' | \
+          sort -u > domains.txt
+          
+          # Clean up the temporary file
+          rm raw.txt
 
       - name: Commit and push changes
         run: |
           git config --global user.name "GitHub Action Bot"
           git config --global user.email "action@github.com"
           git add domains.txt
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update domain list" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update domain lists" && git push)
