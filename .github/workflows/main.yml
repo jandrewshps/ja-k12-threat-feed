@@ -24,9 +24,8 @@ jobs:
           # (Optional) Add more raw URLs in the future by uncommenting and editing below:
           # curl -fsSL https://raw.githubusercontent.com/Example/Repo/main/list.txt >> raw.txt || true
           # curl -fsSL https://example.com/another-proxy-list.txt >> raw.txt || true
-            curl -fsSL https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-porn/hosts >> raw.txt || true
-            curl -fsSL https://raw.githubusercontent.com/Mafraysse/AdGuard_GameList-Filter/refs/heads/main/Domain_list_raw.txt >> raw.txt || true
-          
+          curl -fsSL https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-porn/hosts >> raw.txt || true
+          curl -fsSL https://raw.githubusercontent.com/Mafraysse/AdGuard_GameList-Filter/refs/heads/main/Domain_list_raw.txt >> raw.txt || true
           # ==============================================================================
 
           # 3. Download and extract Toulouse Tarballs (Games and VPNs)
@@ -48,6 +47,9 @@ jobs:
           rm -rf ut1_tmp
 
           # 4. Clean the text and format it for the FortiGate
+          # Create an empty allowlist if one doesn't exist so the script doesn't fail
+          touch allowlist.txt
+
           grep -vE '^#|^$' raw.txt | \
           sed -E 's/^(0\.0\.0\.0|127\.0\.0\.1)[[:space:]]+//' | \
           sed 's|https\?://||' | \
@@ -55,6 +57,7 @@ jobs:
           cut -d: -f1 | \
           tr -d '\r' | \
           grep -E '^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' | \
+          grep -vxFf allowlist.txt | \
           sort -u > domains.txt
           
           rm raw.txt
