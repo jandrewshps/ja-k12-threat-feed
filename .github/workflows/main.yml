@@ -24,7 +24,7 @@ jobs:
           # (Optional) Add more raw URLs in the future by uncommenting and editing below:
           # curl -fsSL https://raw.githubusercontent.com/Example/Repo/main/list.txt >> raw.txt || true
           # curl -fsSL https://example.com/another-proxy-list.txt >> raw.txt || true
-          # curl -fsSL https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-porn/hosts >> raw.txt || true
+           curl -fsSL https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-porn/hosts >> raw.txt || true
            curl -fsSL https://raw.githubusercontent.com/Mafraysse/AdGuard_GameList-Filter/refs/heads/main/Domain_list_raw.txt >> raw.txt || true
           # ==============================================================================
 
