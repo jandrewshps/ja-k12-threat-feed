@@ -4,3 +4,4 @@ media.goodgame.com
 media.quizizz.com
 media.wayground.com
 qglobal.pearsonassessments.com
+s3.amazonaws.com/qglobal-qg2-us-prd
