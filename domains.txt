@@ -18784,7 +18784,6 @@ beacon.krxd.net
 beacon.lijit.com
 beacon.livefyre.com
 beacon.lynx.cognitivlabs.com
-beacon.my.salesforce.com
 beacon.netflix.com
 beacon.qq.com
 beacon.quiltmc.org
