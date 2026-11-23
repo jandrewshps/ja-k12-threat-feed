@@ -16,3 +16,4 @@ quizizz-static.s3-accelerate.amazonaws.com
 quizizz.com
 s3.amazonaws.com
 sync.cmedia.s3.amazonaws.com
+scratch.mit.edu
