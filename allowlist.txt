@@ -30,3 +30,4 @@ kasandbox.org
 ka-cs-scratchpad-audio.s3.amazonaws.com
 cookielaw.org
 googlevideo.com
+beacon.my.salesforce.com
