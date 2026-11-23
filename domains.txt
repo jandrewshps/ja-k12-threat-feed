@@ -12049,7 +12049,6 @@ analytics.reliant.com
 analytics.rever.vn
 analytics.reyrey.net
 analytics.rogersmedia.com
-analytics.s3.amazonaws.com
 analytics.saas-vn.network
 analytics.safelinking.net
 analytics.salmonads.com
@@ -12142,7 +12141,6 @@ analytics.ziftsolutions.com
 analytics.zim.vn
 analyticsapi.bsbportal.com
 analyticsapi.happypancake.net
-analyticsengine.s3.amazonaws.com
 analyticsnew.overwolf.com
 analyticsresults.bildungsforum.datev.de
 analyticsresults.datev-karriereblog.de
@@ -45451,7 +45449,6 @@ ecomadserver.com
 ecommerce.datatrics.com
 ecommercegoodies.com
 ecommercetimes.us.intellitxt.com
-ecommstats.s3.amazonaws.com
 econofelwo.store
 economisttestcollect.insightfirst.com
 economypinballrepair.weebly.com
@@ -45594,7 +45591,6 @@ education1.com.br
 education1.educationlearningcollege.lovestoblog.com
 educationalchess.com
 educationalplaycare.com
-educationate.s3.amazonaws.com
 educationbull.asturkiters.es
 educationforall.educationlearningcollege.lovestoblog.com
 educationlessons.crabdance.com
@@ -73295,7 +73291,6 @@ incognitopartyservice.com
 incognitosearches.com
 incognitymous.com
 income88.com
-incoming-data-sense360.s3.amazonaws.com
 incoming-telemetry.thunderbird.net
 incoming.bm23.com
 incoming.telemetry.mozilla.org
@@ -116549,9 +116544,6 @@ quizerd2.8m.net
 quizform.com
 quizglobal.com
 quizible.com
-quizizz-static.s3-accelerate.amazonaws.com
-quizizz-static.s3.amazonaws.com
-quizizz.com
 quizland.com
 quizmaster.at
 quizmasters.biz
@@ -121386,7 +121378,6 @@ s3-ap-southeast-2-amazonaws.com
 s3.adbers.com
 s3.adpia.vn
 s3.amateurs-gone-wild.com
-s3.amazonaws.com
 s3.buysellads.com
 s3.cdnv365.com
 s3.cherry.tv
@@ -134142,7 +134133,6 @@ sync.atomex.net
 sync.audtd.com
 sync.bfmio.com
 sync.clickonometrics.pl
-sync.cmedia.s3.amazonaws.com
 sync.colossusssp.com
 sync.commander1.com
 sync.connectad.io
