@@ -3,3 +3,4 @@ media.blooket.com
 media.goodgame.com
 media.quizizz.com
 media.wayground.com
+qglobal.pearsonassessments.com
