@@ -5,3 +5,14 @@ media.quizizz.com
 media.wayground.com
 qglobal.pearsonassessments.com
 s3.amazonaws.com/qglobal-qg2-us-prd
+stockmarketgame.com
+analytics.s3.amazonaws.com
+analyticsengine.s3.amazonaws.com
+ecommstats.s3.amazonaws.com
+educationate.s3.amazonaws.com
+incoming-data-sense360.s3.amazonaws.com
+quizizz-static.s3.amazonaws.com
+quizizz-static.s3-accelerate.amazonaws.com
+quizizz.com
+s3.amazonaws.com
+sync.cmedia.s3.amazonaws.com
