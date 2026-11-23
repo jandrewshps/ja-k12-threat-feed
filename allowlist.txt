@@ -19,3 +19,4 @@ sync.cmedia.s3.amazonaws.com
 scratch.mit.edu
 codehs.com
 amplify.com
+kamihq.com
