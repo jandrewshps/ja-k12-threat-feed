@@ -49,3 +49,4 @@ beacons2.gvt3.com
 beacons3.gvt3.com
 beacons4.gvt3.com
 beacons5.gvt3.com
+beinternetawesome.withgoogle.com
