@@ -22,3 +22,4 @@ amplify.com
 kamihq.com
 wordwall.net
 khanacademy.org
+www.khanacademy.org
