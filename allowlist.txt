@@ -38,3 +38,9 @@ beacon.my.salesforce.com
 .pearsonhighered.com
 .pearsonplus.com
 .pearsonprd.tech
+storage.googleapis.com
+beacons.gcp.gvt2.com
+cdn.jsdelivr.net
+beacons.gcp.gvt2.com
+beacons4.gvt2.com
+beacons5.gvt3.com
