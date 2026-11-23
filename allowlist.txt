@@ -31,3 +31,10 @@ ka-cs-scratchpad-audio.s3.amazonaws.com
 cookielaw.org
 googlevideo.com
 beacon.my.salesforce.com
+.pearson.com
+.mypearson.com
+.pearsoned.com
+.pearsoncmg.com
+.pearsonhighered.com
+.pearsonplus.com
+.pearsonprd.tech
