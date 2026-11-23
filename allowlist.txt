@@ -23,3 +23,10 @@ kamihq.com
 wordwall.net
 khanacademy.org
 www.khanacademy.org
+classroom.khanacademy.org
+*.khanacademy.org
+kastatic.org
+kasandbox.org
+ka-cs-scratchpad-audio.s3.amazonaws.com
+cookielaw.org
+googlevideo.com
