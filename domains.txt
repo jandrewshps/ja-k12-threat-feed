@@ -18815,13 +18815,8 @@ beaconin2.notinote.me
 beaconmeadowart.life
 beaconroutehub.top
 beacons.extremereach.io
-beacons.gcp.gvt2.com
 beacons.gvt2.com
 beacons.mediamelon.com
-beacons2.gvt2.com
-beacons3.gvt2.com
-beacons4.gvt2.com
-beacons5.gvt2.com
 beaconserver-ce-vpc0-1537565064.eu-west-1.elb.amazonaws.com
 beaconserver-ce-vpc0-1909323404.us-west-2.elb.amazonaws.com
 beacontest.cardlytics.com
@@ -19123,7 +19118,6 @@ beijingworldgames.info
 bein.mza.com.ar
 bein8.okzk.com
 beingai.com
-beinternetawesome.withgoogle.com
 beirut-guide.com
 bejav-net.zproxy.org
 bejav.net
@@ -30852,7 +30846,6 @@ cdn.jennymovies.com
 cdn.jivox.com
 cdn.jizzberry.com
 cdn.jquery-uim.download
-cdn.jsdelivr.net
 cdn.jsdmirror.com
 cdn.jst.ai
 cdn.justindianporn.com
@@ -132310,7 +132303,6 @@ storage-uk.tlsext.com
 storage.affmates.com
 storage.cloud.kargo.com
 storage.erogames.com
-storage.googleapis.com
 storage.kameleoon.eu
 storage.larp.ccwu.cc
 storage.softure.com
